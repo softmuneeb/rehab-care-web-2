@@ -61,16 +61,10 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
-
-.privacy-policy h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-.privacy-policy h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
+/* Links and lists */
+.privacy-policy a {
+  color: #5cb6f9;
+  text-decoration: underline;
 }
 
 .privacy-policy ul {
@@ -78,11 +72,29 @@
   margin-bottom: 1rem;
 }
 
-.privacy-policy li {
-  margin-bottom: 0.5rem;
+@media (prefers-color-scheme: light) {
+  .privacy-policy {
+    color: #222;
+    /* dark readable text on light background */
+    background: transparent;
+  }
+
+  .privacy-policy a {
+    color: #0066cc;
+  }
+
+  /* slightly darker blue for contrast */
+  /* ensure bullets are visible */
+  .privacy-policy ul {
+    color: inherit;
+  }
 }
 
-.privacy-policy a {
-  color: #5cb6f9;
-  text-decoration: underline;
+/* If your app toggles theme via a class on <body>, add this too (optional) */
+body.theme-light .privacy-policy {
+  color: #222;
+}
+
+body.theme-dark .privacy-policy {
+  color: #fff;
 }
