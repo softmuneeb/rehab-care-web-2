@@ -138,6 +138,63 @@ function PrivacyPolicy() {
   );
 }
 
+function ContactUs() {
+  return (
+    <div className="contact-page" style={{ maxWidth: 800, margin: "40px auto", padding: 24 }}>
+      <h1>Contact Us</h1>
+      <p>
+        For support, partnership inquiries, or feedback about KinetiCare.ai, reach
+        out using the information below or send a message using the form.
+      </p>
+
+      <h2>Support</h2>
+      <p>
+        Email: <a href="mailto:Dr.W@KinetiCare.ai">Dr.W@KinetiCare.ai</a>
+      </p>
+
+      <h2>Send a message</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          // minimal client-side behavior: open mail client with subject/body
+          const form = e.currentTarget as HTMLFormElement;
+          const formData = new FormData(form);
+          const name = formData.get("name") || "";
+          const email = formData.get("email") || "";
+          const message = formData.get("message") || "";
+          const mailto = `mailto:Dr.W@KinetiCare.ai?subject=${encodeURIComponent(
+            `Website message from ${name}`
+          )}&body=${encodeURIComponent(`From: ${name} <${email}>\n\n${message}`)}`;
+          window.location.href = mailto;
+        }}
+      >
+        <div style={{ marginBottom: 8 }}>
+          <label>
+            Name
+            <br />
+            <input name="name" type="text" style={{ width: "100%" }} />
+          </label>
+        </div>
+        <div style={{ marginBottom: 8 }}>
+          <label>
+            Email
+            <br />
+            <input name="email" type="email" style={{ width: "100%" }} />
+          </label>
+        </div>
+        <div style={{ marginBottom: 8 }}>
+          <label>
+            Message
+            <br />
+            <textarea name="message" rows={6} style={{ width: "100%" }} />
+          </label>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div className="kineticare-hero">
@@ -158,9 +215,14 @@ function Home() {
           Expert-designed hand and wrist rehabilitation exercises. One purposeful
           movement at a time—anytime, anywhere.
         </p>
-        <Link to="/privacy-policy" className="privacy-link">
-          Privacy Policy
-        </Link>
+        <nav style={{ marginTop: 12 }}>
+          <Link to="/privacy-policy" className="privacy-link" style={{ marginRight: 16 }}>
+            Privacy Policy
+          </Link>
+          <Link to="/contact" className="contact-link">
+            Contact
+          </Link>
+        </nav>
       </div>
     </div>
   );
@@ -172,6 +234,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
   );
