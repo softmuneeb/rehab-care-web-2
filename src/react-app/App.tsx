@@ -140,7 +140,7 @@ function PrivacyPolicy() {
 
 function ContactUs() {
   return (
-    <div className="contact-page" style={{ maxWidth: 800, margin: "40px auto", padding: 24 }}>
+    <div className="contact-page">
       <h1>Contact Us</h1>
       <p>
         For support, partnership inquiries, or feedback about KinetiCare.ai, reach
@@ -168,28 +168,25 @@ function ContactUs() {
           window.location.href = mailto;
         }}
       >
-        <div style={{ marginBottom: 8 }}>
+        <div style={{ marginBottom: 16 }}>
           <label>
             Name
-            <br />
-            <input name="name" type="text" style={{ width: "100%" }} />
+            <input name="name" type="text" required />
           </label>
         </div>
-        <div style={{ marginBottom: 8 }}>
+        <div style={{ marginBottom: 16 }}>
           <label>
             Email
-            <br />
-            <input name="email" type="email" style={{ width: "100%" }} />
+            <input name="email" type="email" required />
           </label>
         </div>
-        <div style={{ marginBottom: 8 }}>
+        <div style={{ marginBottom: 16 }}>
           <label>
             Message
-            <br />
-            <textarea name="message" rows={6} style={{ width: "100%" }} />
+            <textarea name="message" rows={6} required />
           </label>
         </div>
-        <button type="submit">Send</button>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   );
@@ -197,34 +194,167 @@ function ContactUs() {
 
 function Home() {
   return (
-    <div className="kineticare-hero">
-      <div className="kineticare-logo-circle">
-        <span
-          role="img"
-          aria-label="Hand Rehabilitation Logo"
-          className="kineticare-logo"
-          style={{ fontSize: "8rem" }}
-        >
-          🖐️
-        </span>
+    <>
+      {/* Hero Section */}
+      <div className="kineticare-hero">
+        <div className="kineticare-logo-circle">
+          <span
+            role="img"
+            aria-label="Hand Rehabilitation Logo"
+            className="kineticare-logo"
+            style={{ fontSize: "8rem" }}
+          >
+            🖐️
+          </span>
+        </div>
+        <div className="kineticare-content">
+          <h1 className="kineticare-title">KinetiCare.ai</h1>
+          <h2 className="kineticare-subtitle">Guiding Prevention and Recovery</h2>
+          <p className="kineticare-desc">
+            Expert-designed hand and wrist rehabilitation exercises. One purposeful
+            movement at a time—anytime, anywhere.
+          </p>
+          <nav style={{ marginTop: 12 }}>
+            <Link to="/privacy-policy" className="privacy-link" style={{ marginRight: 16 }}>
+              Privacy Policy
+            </Link>
+            <Link to="/contact" className="contact-link">
+              Contact
+            </Link>
+          </nav>
+        </div>
       </div>
-      <div className="kineticare-content">
-        <h1 className="kineticare-title">KinetiCare.ai</h1>
-        <h2 className="kineticare-subtitle">Guiding Prevention and Recovery</h2>
-        <p className="kineticare-desc">
-          Expert-designed hand and wrist rehabilitation exercises. One purposeful
-          movement at a time—anytime, anywhere.
-        </p>
-        <nav style={{ marginTop: 12 }}>
-          <Link to="/privacy-policy" className="privacy-link" style={{ marginRight: 16 }}>
-            Privacy Policy
-          </Link>
-          <Link to="/contact" className="contact-link">
-            Contact
-          </Link>
-        </nav>
-      </div>
-    </div>
+
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="features-container">
+          <h2 className="section-title">Why Choose KinetiCare?</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">🎯</div>
+              <h3 className="feature-title">AI-Powered Feedback</h3>
+              <p className="feature-description">
+                Get real-time analysis of your exercise form with our advanced AI
+                technology. Receive personalized feedback to optimize your recovery.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">📱</div>
+              <h3 className="feature-title">Exercise Anywhere</h3>
+              <p className="feature-description">
+                Access expert-designed rehabilitation exercises from any device.
+                Practice at home, at work, or on the go.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">📊</div>
+              <h3 className="feature-title">Track Progress</h3>
+              <p className="feature-description">
+                Monitor your rehabilitation journey with detailed analytics and
+                progress reports. Stay motivated with visual improvements.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">👨‍⚕️</div>
+              <h3 className="feature-title">Expert Guidance</h3>
+              <p className="feature-description">
+                Follow exercises designed by certified therapists and healthcare
+                professionals with proven results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Video Section */}
+      <section className="demo-section">
+        <div className="demo-container">
+          <h2 className="section-title">See It In Action</h2>
+          <p className="kineticare-desc" style={{ marginBottom: "2rem" }}>
+            Watch how KinetiCare.ai helps users perform rehabilitation exercises
+            with real-time AI feedback and guidance.
+          </p>
+          <div className="demo-video-wrapper">
+            <div className="demo-video-placeholder">
+              <div className="demo-video-text">Hand & Wrist Exercises Demo</div>
+            </div>
+          </div>
+          
+          {/* Demo Images Grid */}
+          <h3 className="section-title" style={{ fontSize: "2rem", marginTop: "4rem" }}>
+            Exercise Examples
+          </h3>
+          <div className="demo-images-grid">
+            <div className="demo-image-card">
+              <div className="demo-image-overlay">
+                <div className="demo-image-icon">🤚</div>
+                <div className="demo-image-label">Finger Stretches</div>
+              </div>
+            </div>
+            <div className="demo-image-card">
+              <div className="demo-image-overlay">
+                <div className="demo-image-icon">✊</div>
+                <div className="demo-image-label">Grip Strength</div>
+              </div>
+            </div>
+            <div className="demo-image-card">
+              <div className="demo-image-overlay">
+                <div className="demo-image-icon">👌</div>
+                <div className="demo-image-label">Pinch Training</div>
+              </div>
+            </div>
+            <div className="demo-image-card">
+              <div className="demo-image-overlay">
+                <div className="demo-image-icon">🔄</div>
+                <div className="demo-image-label">Wrist Rotation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="how-it-works-section">
+        <div className="demo-container">
+          <h2 className="section-title">How It Works</h2>
+          <div className="steps-container">
+            <div className="step">
+              <div className="step-number">1</div>
+              <div className="step-content">
+                <h3 className="step-title">Choose Your Exercise</h3>
+                <p className="step-description">
+                  Browse our library of expert-designed hand and wrist rehabilitation
+                  exercises. Select the ones that match your recovery goals or follow
+                  a recommended program.
+                </p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-number">2</div>
+              <div className="step-content">
+                <h3 className="step-title">Follow Video Guidance</h3>
+                <p className="step-description">
+                  Watch detailed video demonstrations with audio instructions. Our
+                  clear, step-by-step guidance ensures you perform each movement
+                  correctly and safely.
+                </p>
+              </div>
+            </div>
+            <div className="step">
+              <div className="step-number">3</div>
+              <div className="step-content">
+                <h3 className="step-title">Get AI Feedback</h3>
+                <p className="step-description">
+                  Record your exercise attempts and receive instant AI-powered
+                  feedback on your form and technique. Track your progress and
+                  celebrate improvements over time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
