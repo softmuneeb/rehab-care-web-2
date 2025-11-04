@@ -135,9 +135,9 @@
   font-size: 4rem;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease-out 0.2s both;
 }
@@ -214,9 +214,9 @@
   text-align: center;
   margin-bottom: 3rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .features-grid {
@@ -511,9 +511,9 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 /* Links and lists */
 .privacy-policy a {
@@ -574,9 +574,9 @@ body.theme-dark .privacy-policy {
 .contact-page h1,
 .contact-page h2 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 1rem;
 }
 
